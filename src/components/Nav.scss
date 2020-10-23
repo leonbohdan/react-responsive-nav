@@ -6,3 +6,61 @@ $gray-color: #eee;
 .navbar {
   background-color: $menu-color;
 }
+
+// .navbar-item {
+//   background-color: $body-color;
+// }
+
+// .has-dropdown {
+//   background-color: $body-color;
+// }
+
+// .navbar-link {
+//   color: $gray-color;
+//   background-color: $body-color;
+// }
+
+.mobile-buttons {
+  margin-left: auto;
+  visibility: hidden;
+
+  @media(max-width: 1023px){
+    visibility: visible;
+  }
+}
+
+.nav-buttons {
+  @media(max-width: 1023px){
+    visibility: hidden;
+  }
+}
+
+.login-button {
+  background-color: $menu-color;
+  border: 1px solid $yellow-color;
+  color: $yellow-color;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $yellow-color;
+  }
+}
+
+.sign-button {
+  color: $menu-color;
+  background-color: $yellow-color;
+  border: 1px solid $yellow-color;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $menu-color;
+  }
+}
+
+.navbar-burger {
+  margin-left: 0;
+}
+
+.is-hidden {
+  // visibility: hidden;
+}
