@@ -2,23 +2,103 @@ $body-color: #181818;
 $yellow-color: #ffc900;
 $menu-color: #000000;
 $gray-color: #eee;
+$dark-gray: darkgray;
 
 .navbar {
   background-color: $menu-color;
 }
 
-// .navbar-item {
-//   background-color: $body-color;
-// }
+.navbar-item {
 
-// .has-dropdown {
-//   background-color: $body-color;
-// }
+  &--light {
+    @media screen and (max-width: 1024px) {
+      background-color: $body-color;
+      color: $dark-gray;
 
-// .navbar-link {
-//   color: $gray-color;
-//   background-color: $body-color;
-// }
+      &:hover {
+        color: $gray-color;
+      }
+    }
+  }
+}
+
+.navbar-menu {
+  background-color: $menu-color;
+  padding: 0;
+}
+
+.navbar-dropdown {
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+
+  @media screen and (min-width: 1024px) {
+    background-color: #fff;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top: none;
+    box-shadow: 0 8px 8px rgba(10,10,10,.1);
+    display: block;
+    font-size: .875rem;
+    left: 0;
+    min-width: 100%;
+    position: absolute;
+    top: 100%;
+    z-index: 20;
+  }
+}
+
+.navbar-dropdown a.navbar-item {
+  @media screen and (min-width: 1024px) {
+    padding-right: 1rem;
+  }
+}
+
+.navbar-link,
+a.navbar-item {
+  @media screen and (max-width: 1024px) {
+    background-color: $body-color;
+    color: $dark-gray;
+  }
+}
+
+.navbar-link.is-active, 
+.navbar-link:focus, 
+.navbar-link:focus-within, 
+.navbar-link:hover, 
+a.navbar-item.is-active, 
+a.navbar-item:focus, 
+a.navbar-item:focus-within, 
+a.navbar-item:hover {
+  background-color: $body-color;
+  color: $gray-color;
+}
+
+.navbar-link {
+
+  @media screen and (min-width: 1024px) {
+
+    &:hover {
+      color: $dark-gray;
+    }
+
+    &:active {
+      background-color: $body-color;
+      color: $gray-color;
+    }
+
+    &:visited {
+      color: $dark-gray;
+    }
+  }
+}
+
+a.navbar-item--logo {
+  background-color: $menu-color;
+
+  @media screen and (max-width: 1024px) {
+    background-color: $menu-color;
+  }
+}
 
 .mobile-buttons {
   margin-left: auto;
@@ -31,7 +111,7 @@ $gray-color: #eee;
 
 .nav-buttons {
   @media(max-width: 1023px){
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -57,10 +137,11 @@ $gray-color: #eee;
   }
 }
 
-.navbar-burger {
-  margin-left: 0;
+.is-arrowless {
+  display: flex;
+  justify-content: space-between;
 }
 
-.is-hidden {
-  // visibility: hidden;
+.navbar-burger {
+  margin-left: 0;
 }

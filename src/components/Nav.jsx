@@ -21,6 +21,7 @@ export default function Nav() {
       setFirstActiveDropDown(true);
       setSecondActiveDropDown(true);
       setThirdActiveDropDown(true);
+      setIsActive(false);
     }
     
 
@@ -37,9 +38,10 @@ export default function Nav() {
         className="navbar is-transparent"
         role="navigation"
         aria-label="main navigation"
+        id="#"
       >
         <div className="navbar-brand">
-          <a className="navbar-item" href="/#">
+          <a className="navbar-item navbar-item--logo" href="/#">
             <img src={logo} width="112" height="28" alt="logo" />
           </a>
           {
@@ -77,15 +79,22 @@ export default function Nav() {
           className={`navbar-menu ${isActive ? "is-active" : ""}`}
         >
           <div className="navbar-end">
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a
-                className="navbar-link is-arrowless"
-                href="/#"
-                onClick={() => {
-                  setFirstActiveDropDown(!isFirstActiveDropDown);
-                }}
-              >
-                One
+            <div
+              className="navbar-item has-dropdown is-hoverable"
+              onClick={() => {
+                setFirstActiveDropDown(!isFirstActiveDropDown);
+                setSecondActiveDropDown(true);
+                setThirdActiveDropDown(true);
+              }}
+            >
+              <a className="navbar-link is-arrowless" href="/#">
+                <div>
+                  <span className="icon is-medium">
+                    <i className="far fa-user" />
+                  </span>
+                  <span>One</span>
+                </div>
+                <i className="fas fa-plus"></i>
               </a>
 
               <div
@@ -93,26 +102,34 @@ export default function Nav() {
                   isFirstActiveDropDown ? "is-hidden" : ""
                 }`}
               >
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   About
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Jobs
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Contact
                 </a>
               </div>
             </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a
-                className="navbar-link is-arrowless"
-                href="/#"
-                onClick={() => {
-                  setSecondActiveDropDown(!isSecondActiveDropDown);
-                }}
-              >
-                Two
+
+            <div
+              className="navbar-item has-dropdown is-hoverable"
+              onClick={() => {
+                setSecondActiveDropDown(!isSecondActiveDropDown);
+                setThirdActiveDropDown(true);
+                setFirstActiveDropDown(true);
+              }}
+            >
+              <a className="navbar-link is-arrowless" href="/#">
+                <div>
+                  <span className="icon is-medium">
+                    <i className="fas fa-money-check-alt" />
+                  </span>
+                  <span>Two</span>
+                </div>
+                <i className="fas fa-plus"></i>
               </a>
 
               <div
@@ -120,40 +137,52 @@ export default function Nav() {
                   isSecondActiveDropDown ? "is-hidden" : ""
                 }`}
               >
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   About
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Jobs
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Contact
                 </a>
               </div>
             </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a
-                className="navbar-link is-arrowless"
-                href="/#"
-                onClick={() => {
-                  setThirdActiveDropDown(!isThirdActiveDropDown);
-                }}
-              >
-                Three
-              </a>
 
+            <div
+              className="navbar-item has-dropdown is-hoverable"
+              onClick={() => {
+                setThirdActiveDropDown(!isThirdActiveDropDown);
+                setSecondActiveDropDown(true);
+                setFirstActiveDropDown(true);
+              }}
+            >
+              {/* <div
+              className={`navbar-item has-dropdown is-hoverable${
+                isThirdActiveDropDown ? "is-active" : ""
+              }`}
+            > */}
+              <a className="navbar-link is-arrowless" href="/#">
+                <div>
+                  <span className="icon is-medium">
+                    <i className="fas fa-university"></i>
+                  </span>
+                  <span>Three</span>
+                </div>
+                <i className="fas fa-plus"></i>
+              </a>
               <div
                 className={`navbar-dropdown ${
                   isThirdActiveDropDown ? "is-hidden" : ""
                 }`}
               >
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   About
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Jobs
                 </a>
-                <a className="navbar-item" href="/#">
+                <a className="navbar-item navbar-item--light" href="/#">
                   Contact
                 </a>
               </div>
