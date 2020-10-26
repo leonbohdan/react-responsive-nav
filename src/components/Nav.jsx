@@ -44,10 +44,18 @@ export default function Nav() {
           <a className="navbar-item navbar-item--logo" href="#">
             <img
               src={logo}
-              width={`${dimensions.width <= 760 ? '70' : '112'}`} height={`${dimensions.width <= 760 ? '18' : '28'}`} alt="logo" />
+              width={`${dimensions.width <= 760 ? "70" : "112"}`}
+              height={`${dimensions.width <= 760 ? "18" : "28"}`}
+              alt="logo"
+            />
           </a>
-          {<div className="navbar-item mobile-buttons">
-              <div className={`buttons ${dimensions.width <= 760 ? 'are-small' : ''}`}>
+          {
+            <div className="navbar-item mobile-buttons">
+              <div
+                className={`buttons ${
+                  dimensions.width <= 760 ? "are-small" : ""
+                }`}
+              >
                 <button className="button login-button" href="#">
                   Log in
                 </button>
@@ -55,7 +63,8 @@ export default function Nav() {
                   Sign up
                 </button>
               </div>
-            </div>}
+            </div>
+          }
 
           <a
             role="button"
@@ -94,7 +103,11 @@ export default function Nav() {
                   </span>
                   <span>One</span>
                 </div>
-                <i className="fas fa-plus ico"></i>
+                <i
+                  className={`fas fa-plus ico ${
+                    isFirstActiveDropDown ? "" : "ico-x"
+                  }`}
+                />
               </a>
 
               <div
@@ -129,7 +142,11 @@ export default function Nav() {
                   </span>
                   <span>Two</span>
                 </div>
-                <i className="fas fa-plus ico"></i>
+                <i
+                  className={`fas fa-plus ico ${
+                    isSecondActiveDropDown ? "" : "ico-x"
+                  }`}
+                ></i>
               </a>
 
               <div
@@ -164,7 +181,11 @@ export default function Nav() {
                   </span>
                   <span>Three</span>
                 </div>
-                <i className="fas fa-plus ico"></i>
+                <i
+                  className={`fas fa-plus ico ${
+                    isThirdActiveDropDown ? "" : "ico-x"
+                  }`}
+                ></i>
               </a>
               <div
                 className={`navbar-dropdown ${

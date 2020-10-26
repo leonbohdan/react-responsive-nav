@@ -53,21 +53,11 @@ $dark-gray: darkgray;
   }
 }
 
-// .navbar-menu {
-//   background-color: $menu-color;
-//   padding: 0;
-//   animation: navAnimOpen .2s ease-in-out;
-// }
-
-// @keyframes navAnimOpen {
-//   0% {display: none; opacity: 0; max-height: 0;}
-//   1% {display: block; opacity: 0;}
-//   100% {opacity: 1; max-height: 396px;}
-// }
-
 .navbar-dropdown {
   padding-bottom: 0rem;
   padding-top: 0rem;
+
+  animation: navAnimOpen .8s ease-in-out;
 
   @media screen and (min-width: 1024px) {
     background-color: #fff;
@@ -75,13 +65,18 @@ $dark-gray: darkgray;
     border-bottom-right-radius: 0px;
     border-top: none;
     box-shadow: 0 8px 8px rgba(10,10,10,.1);
-    display: block;
     font-size: .875rem;
-    left: 0;
     min-width: 100%;
+    display: block;
     position: absolute;
-    top: 100%;
+    left: 0;
   }
+}
+
+@keyframes navAnimOpen {
+  0% {display: none; opacity: 0; max-height: 0;}
+  1% {display: block; opacity: 0;}
+  100% {opacity: 1; max-height: 396px;}
 }
 
 .navbar-dropdown a.navbar-item {
@@ -185,6 +180,14 @@ a.navbar-item--logo {
 .iconame {
   display: flex;
   align-items: center;
+}
+
+.ico-x {
+  transition: transform 0.5s ease-in-out;
+}
+
+.ico-x {
+  transform: rotate(-45deg);
 }
 
 .navbar-burger {
