@@ -8,6 +8,12 @@ $dark-gray: darkgray;
   background-color: $menu-color;
 }
 
+.navbar-brand {
+  position: relative;
+  z-index: 1;
+  background-color: $menu-color;
+}
+
 .navbar-item {
 
   &--light {
@@ -25,7 +31,39 @@ $dark-gray: darkgray;
 .navbar-menu {
   background-color: $menu-color;
   padding: 0;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: all .4s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
 }
+
+.navbar-menu.is-active {
+  @media screen and (max-width: 1024px) {
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+// .navbar-menu {
+//   background-color: $menu-color;
+//   padding: 0;
+//   animation: navAnimOpen .2s ease-in-out;
+// }
+
+// @keyframes navAnimOpen {
+//   0% {display: none; opacity: 0; max-height: 0;}
+//   1% {display: block; opacity: 0;}
+//   100% {opacity: 1; max-height: 396px;}
+// }
 
 .navbar-dropdown {
   padding-bottom: 0rem;
@@ -43,7 +81,6 @@ $dark-gray: darkgray;
     min-width: 100%;
     position: absolute;
     top: 100%;
-    z-index: 20;
   }
 }
 
@@ -74,7 +111,6 @@ a.navbar-item:hover {
 }
 
 .navbar-link {
-
   @media screen and (min-width: 1024px) {
 
     &:hover {
@@ -101,6 +137,9 @@ a.navbar-item--logo {
 }
 
 .mobile-buttons {
+  background-color: $menu-color;
+  position: relative;
+  z-index: 1;
   margin-left: auto;
   visibility: hidden;
 
@@ -140,8 +179,42 @@ a.navbar-item--logo {
 .is-arrowless {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.iconame {
+  display: flex;
+  align-items: center;
 }
 
 .navbar-burger {
   margin-left: 0;
+}
+
+.ico {
+  @media(min-width: 1023px){
+    display: none;
+  }
+}
+
+.navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  transform-origin: center;
+  transition-duration: 86ms;
+  transition-property: background-color,opacity,transform;
+  transition-timing-function: ease-out;
+  width: 19px;
+}
+
+.navbar-burger {
+  color: $gray-color;
+  margin-left: -15px;
+
+  &:hover {
+    color: $gray-color;
+  }
 }
